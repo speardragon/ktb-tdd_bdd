@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.ktb.chatbotbe.UserTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-07-23T02:37:24" hostname="gangchanglyong-ui-MacBookPro.local" time="0.002">
+  <properties/>
+  <testcase name="패스워드가 요구사항에 부합하지 않아 초기화가 되지 않는다." classname="org.ktb.chatbotbe.UserTest" time="0.001"/>
+  <testcase name="패스워드를 초기화한다." classname="org.ktb.chatbotbe.UserTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
