@@ -35,8 +35,16 @@
 
 ### Day 5
 
-- [ ] 지속적인 통합(CI) 설정 및 테스트 자동화
-- [ ] 최종 결과물 제출 (코드, 테스트 시나리오, 테스트 커버리지 보고서, 적용 사례 보고서)
+- [x] 지속적인 통합(CI) 설정 및 테스트 자동화
+- [x] 최종 결과물 제출 (코드, 테스트 시나리오, 테스트 커버리지 보고서, 적용 사례 보고서)
+
+
+
+# 목차
+
+* [테스트 시나리오](#3.-설계:-TDD-및-BDD를-적용한-테스트-작성-및-자동화-프로세스-설계)
+* [테스트 커버리지 보고서](#13.-테스트-커버리지-확인-및-보고서-작성)
+* [적용 사례 보고서](#14.-TDD-및-BDD-적용-사례-연구-및-보고서-작성)
 
 
 
@@ -64,9 +72,9 @@
 
 - **SelfTestingCode를 얻음**: 테스트를 통과하기 위해서만 기능 코드를 작성할 수 있다. 
 
-- **기능 분리**: 테스트를 먼저 생각함으로써 코드 인터페이스를 먼저 생각하게 되기 때문에 인터페이스와 구현을 분리하는 데 도움을 줄 수 있다. 이는 많은 프로그래머가 어려움을 겪는 좋은 디자인의 핵심 요소이기도 하다.
+- **기능 분리**: 테스트를 먼저 생각함으로써 코드 인터페이스를 먼저 생각하게 되기 때문에 인터페이스와 구현을 분리하는 데에 도움을 줄 수 있다. 이는 많은 프로그래머가 어려움을 겪는 좋은 디자인의 핵심 요소이기도 하다.
 
-- **코드 품질 향상**: TDD는 테스트를 먼저 작성하고 이에 맞춰 코드를 구현하는 방식으로, 코드의 품질을 높이고 유지보수성을 향상시킨다. 이는 잘못된 코드가 초기에 발견되도록 하여 버그를 줄이고 코드의 안정성을 보장힌다.
+- **코드 품질 향상**: TDD는 테스트를 먼저 작성하고 이에 맞춰 코드를 구현하는 방식으로, 코드의 품질을 높이고 유지보수성을 향상시킨다. 이는 잘못된 코드가 초기에 발견되도록 하여 버그를 줄이고 코드의 안정성을 보장한다.
 
 - **개발 속도 증가**: 초기에는 시간이 더 걸릴 수 있지만, 장기적으로 봤을 때 버그 수정에 드는 시간을 줄여주므로 전체 개발 속도가 증가한다. 테스트가 자동화되어 반복적인 수작업 테스트가 필요 없게 된다.
 
@@ -100,7 +108,7 @@ BDD에는 세 가지 실천 방법이 존재한다.
 
 1. **발견(Discovery)**: 시스템의 새로운 기능에 대한 구체적인 예시를 논의한다.
    - 발견 과정에서는 사용자의 관점에서 시스템의 실제 예시를 중심으로 구조화된 대화를 통해 팀의 공유 이해를 구축한다.
-2. **형식화: (Formulation)**: 이러한 예시를 자동화할 수 있는 방식으로 문서화합니다.
+2. **형식화: (Formulation)**: 이러한 예시를 자동화할 수 있는 방식으로 문서화한다.
    - 발견 과정에서 도출된 예시를 문서화하여 팀의 공유 비전을 확인한다. 이 문서는 사람과 컴퓨터 모두 읽을 수 있어야 하며, 이는 자동화된 예시로 구현을 안내한다.
 3. **자동화(Automation)**: 문서화된 예시를 테스트로 구현하여 코드를 개발한다.
    - 형식화된 문서를 사용하여 시스템에 테스트로 연결하고, 이 테스트를 통해 구현 코드를 개발한다. 자동화된 예시는 개발 작업을 올바르게 안내하며, 시스템 유지보수 시에도 안전하게 변경할 수 있도록 돕는다.
@@ -117,7 +125,7 @@ BDD는 비즈니스 가치에 초점을 맞추어 사용자 스토리와 기능 
 
 2. **협업 강화**
 
-BDD는 개발자, 테스트 담당자, 비즈니스 이해관계자 간의 커뮤니케이션을 촉진합한다. 공통된 언어(예: Gherkin)를 사용하여 시나리오를 정의함으로써 모든 팀원이 같은 목표를 공유하고 협력할 수 있게 한다.
+BDD는 개발자, 테스트 담당자, 비즈니스 이해관계자 간의 커뮤니케이션을 촉진한다. 공통된 언어(예: Gherkin)를 사용하여 시나리오를 정의함으로써 모든 팀원이 같은 목표를 공유하고 협력할 수 있게 한다.
 
 
 
@@ -179,7 +187,7 @@ BDD의 최종 목표는 소프트웨어가 비즈니스 요구사항을 충족�
 ### 단계 1: 초기 설정 및 환경 구축
 
 - 테스트 프레임워크 선택: 일반적인 Java 프로젝트에서는 JUnit을 사용한다. JUnit은 널리 사용되는 단위 테스트 프레임워크로, 다양한 테스트 기능을 제공한다.
-- 환경 설정: Maven 또는 Gradle을 사용하여 Unit을 프로젝트에 포함시킨다. 지속적 통합(CI) 도구 (예: Jenkins, Github actions)를 설정하여 테스트 자동화를 구축한다.
+- 환경 설정: Gradle을 사용하여 JUnit을 프로젝트에 포함시킨다. 지속적 통합(CI) 도구 (예: Jenkins, Github actions)를 설정하여 테스트 자동화를 구축한다.
 
 
 
@@ -194,7 +202,7 @@ BDD의 최종 목표는 소프트웨어가 비즈니스 요구사항을 충족�
 ### 단계 3: BDD 프로세스 적용
 
 - 사용자 시나리오 작성: 사용자 스토리를 기반으로 시나리오를 작성한다. 이때 Gherkin 문법을 사용하여 시나리오를 명확히 정의한다.
-- BDD 테스트 작성 및 실행: 시나리오에 따라 BDD 테스트를 작성하고 실행한다. 테스트 결과를 확인하여 요구사항이 정호확히 반영되었는지 검증한다.
+- BDD 테스트 작성 및 실행: 시나리오에 따라 BDD 테스트를 작성하고 실행한다. 테스트 결과를 확인하여 요구사항이 정확히 반영되었는지 검증한다.
 - 통합 테스트 작성 및 실행: 개별 기능이 올바르게 통합되는지 확인하기 위해 통합 테스트를 작성하고 실행한다.
 
 
@@ -281,9 +289,7 @@ BDD의 최종 목표는 소프트웨어가 비즈니스 요구사항을 충족�
 
 <img width="504" alt="image" src="https://github.com/user-attachments/assets/f1689beb-13c4-4343-982a-6999e012b6bb">
 
-실습에 앞서서 프로젝트를 새로 만들어 보면 알 수 있듯 build.gradle 파일에는 아래 그림과 같이 JUnit5 프레임워크에 대한 의존성이 이미 추가가 된 모습을 볼 수 있다. 그렇다면 AssertJ만 따로 추가해 주도록 한다.
-
-
+실습에 앞서서 프로젝트를 새로 만들어 보면 알 수 있듯 build.gradle 파일에는 위 사진과 같이 JUnit5 프레임워크에 대한 의존성이 이미 추가가 된 모습을 볼 수 있다. 그렇다면 AssertJ만 따로 추가해 주도록 한다.
 
 ```
 testImplementation 'org.assertj:assertj-core:3.21.1'
@@ -293,11 +299,11 @@ testImplementation 'org.assertj:assertj-core:3.21.1'
 
 <img width="449" alt="image" src="https://github.com/user-attachments/assets/78d6fa0f-c811-4893-8c91-17c68e6c8185">
 
-위 사진은 spring 프로젝트 진행 시 구성되는 폴더 구조이다. 일반적으로 main 부분에 들어가는 코드를 프로덕션 코드라 하고, test 부분에 들어가는 코드를 테스트 코드라고 부른다.
+위 사진은 spring 프로젝트 진행 시 자동으로 구성되는 폴더 구조이다. 일반적으로 main 부분에 들어가는 코드를 프로덕션 코드라 하고, test 부분에 들어가는 코드를 테스트 코드라고 부른다.
 
 
 
-보통 새로운 프로젝트를 생성하면 위 사진과 같은 구조로 만들어지기 때문에 별도로 수정해야 할 필요는 없지만 만약 테스트 코드 부분의 패키지와 프로덕션 코드의 패키지 구조가 다르다면 맞춰주는 것이 좋다.
+보통 새로운 프로젝트를 생성하면 위 사진과 같은 구조로 세팅되어 만들어지기 때문에 별도로 수정해야 할 필요는 없지만 만약 테스트 코드 부분의 패키지와 프로덕션 코드의 패키지 구조가 다르다면 맞춰주는 것이 좋다.
 
 
 
@@ -309,7 +315,7 @@ testImplementation 'org.assertj:assertj-core:3.21.1'
 
 
 
-또한 @DisplayName()을 통해 괄호 안에 요구사항에 대한 내용을 적어줌으로써 앞서 설명한 문서화 역할을 할 수 있게 됩니다.
+또한 @DisplayName()을 통해 괄호 안에 요구사항에 대한 내용을 적어줌으로써 앞서 설명한 문서화 역할을 할 수 있게 된다.
 
 ```java
 public class PasswordValidatorTest {
@@ -327,7 +333,7 @@ public class PasswordValidatorTest {
 
 
 
-테스트 코드 실행 시 assertThatCode 함수 안에 들어간 labmda를 실행하게 되고 만약 유요한 비밀번호인 경우 아무런 예외를 던지지 않도록 작성한 코드이다.
+테스트 코드 실행 시 assertThatCode 함수 안에 들어간 labmda를 실행하게 되고 만약 유효한 비밀번호인 경우 아무런 예외를 던지지 않도록 작성한 코드이다.
 
 - assertThatCode는 assertJ 라이브러리의 메서드로 코드의 가독성을 높여주는 역할을 한다.(doesNotThrowAnyException)
 
@@ -341,11 +347,11 @@ public class PasswordValidatorTest {
 
 <img width="1337" alt="image" src="https://github.com/user-attachments/assets/b19ac651-de5f-403d-a566-74d69cb8893d">
 
-당연히 처음에는 위 사진과 같이 테스트 실패가 되면서 오류가 나게 된다. 람다의 내용인 PasswordValidator에 대한 클래스를 만들어주지 않았기 때문이기에 그렇다면 다음에 해야할 내용은 너무나 명확해 진다.
+당연히 처음에는 위 사진과 같이 테스트 실패가 되면서 오류가 나게 되는데, 이는 당연히도 람다의 내용인 PasswordValidator에 대한 클래스를 만들어주지 않았기 때문이고 그렇다면 다음에 해야할 작업은 너무나 명확하다.
 
 
 
-TDD 프로세스에 따르면 테스트가 실패했으니 이 테스트를 성공하는 방향의 태스크를 해주면 된다. 그렇기에 이제 PasswordValidator를 만들어 주면 된다.
+TDD 프로세스에 따르면 테스트가 실패했으니 이 테스트를 성공하는 방향의 태스크를 해주면 된다. 그렇기에 이제 PasswordValidator를 만들어 주면 되는 것이다.
 
 <img width="888" alt="image" src="https://github.com/user-attachments/assets/8fd9b31e-1d0c-4a86-945f-c508b21443b7">
 
@@ -377,7 +383,7 @@ public class PasswordValidator {
 
 
 
-그러나 이렇게 되면 유효성을 검사하는 코드 쪽에서 오류를 throw하는 부분이 없기 때문에 무조건 다 유효하다고 판단되어 아직까지는 의미가 없는 코드이다.
+그러나 이렇게 되면 유효성을 검사하는 코드 쪽에서 오류를 throw하는 부분이 없기 때문에 무조건 다 유효하다고 판단되어 아직까지는 의미가 없는 코드라고 봐야한다.
 
 
 
@@ -408,17 +414,17 @@ assertThatCode(() -> PasswordValidator.validate("123456789"))
 
 
 
-그렇다면 8자 미만의 비밀번호를 입력하게 되면 어떻게 될까?
+그렇다면 8자 미만의 비밀번호를 입력하게 되면 어떻게 될까? -> 이것이 우리가 다음에 진행할 작업을 만들어내기 위해 일부러 테스트를 실패하게 하는 것이다.
 
 <img width="433" alt="image" src="https://github.com/user-attachments/assets/177b5737-adbc-4c50-80a5-702292a347ea">
 
-또 예상대로 테스트가 실패하는 상황을 맞이할 수 있게 된다. 이를 통해 다음으로 구현해야 할 요구사항은 아래와 같이 추가할 수 있다.
+그러면 또 예상대로 테스트가 실패하는 상황을 볼 수 있게 된다. 이를 통해 다음으로 구현해야 할 요구사항은 아래와 같이 정리할 수 있다.
 
 - 비밀번호가 최소 8자 이상, 최대 12자 이하가 아닌 경우 'IllegalArgumentException'을 발생되는 것을 확인할 수 있어야 한다.
 
 
 
-그렇다면 이를 확인할 수 있는 두 번째 테스트 코드를 만들어 볼 것이다.
+그렇다면 이제는 앞선 상황을 확인할 수 있는 두 번째 테스트 코드를 만들어 볼 것이다.
 
 ```java
     @DisplayName("비밀번호가 8자 미만 또는 12자를 초과하는 경우 IllegalArgumentException 예외가 발생한다.")
@@ -469,48 +475,15 @@ class Ktb11Project1ChatbotBeApplicationTests {
 
 ## 8. 테스트 통과 시 새로운 테스트 케이스 작성
 
-우리가 테스트 코드를 작성을 할 때 반드시 따져봐야 하는 경우 중 하나는 경계 조건에서 정상 작동하는지를 확인하는 것이다. 위 예제로 미루어봤을 때, 비밀번호가 8자 미만 또는 12자 초과인 경우 예외를 내는 상황이기 때문에 그 경계 값인 7자, 13자의 경우의 테스트 코드를 반드시 작성해 봐야 하는 것이다.
+우리가 테스트 코드를 작성을 할 때 반드시 따져봐야 하는 경우 중 하나는 경계 조건에서 정상 작동하는지를 확인하는 것이다. 위 예제로 미루어봤을 때, 비밀번호가 8자 미만 또는 12자 초과인 경우 예외를 내는 상황이기 때문에 그 경계 값인 7자, 13자의 경우의 테스트 코드까지를 반드시 작성해 봐야 하는 것이다.
 
 
 
-경계값을 테스트 해야 하는 이유는 이 부분이 통과되는 것이 보장되어야 이후 문제가 될 여지를 남겨두지 않기 때문이다.
+경계값을 테스트 해야 하는 이유는 이 부분이 통과되는 것이 보장되어야 이후 다른 값들에 대한 문제가 될 여지를 남겨두지 않기 때문이다.
 
 
 
-이 부분을 더 효율적으로 테스트해보기 위해서 그 동안 사용했던 @Test 대신에 @ParameterizedTest를 사용해볼 것이다.
-
-- @ParameterizedTest에 대한 자세한 내용은 http://assertj.github.io 에서 확인할 수 있다.
-
-
-
-```java
-    @DisplayName("경계에 있는 길이 값에 대해 IllegalArgumentException 예외가 발생한다.")
-    @ParameterizedTest
-    @ValueSource(strings = {"1234567", "1234567890123"})
-    void validatePasswordExceptionTest2(String password) {
-        assertThatCode(() -> PasswordValidator.validate(password))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("비밀번호는 최소 8자 이상 12 이하여야 한다.");
-    }
-```
-
-@ParameterizedTest는 여러 개의 data source를 사용하여 테스트하는 것을 의미하고 @ValueSource로 안에 인자들을 어떤 식으로 줄 지 명시한 후 validatePasswordExceptionTest2() 메서드에 인자로 String password와 같이 string 형태의 password가 들어오게 될 것이다.라고 명시를 하면 password 변수에 앞서 @ValueSource에 지정해 둔 비밀번호 값들이 순차적으로 들어와 테스트를 진행하게 된다.
-
-- 이렇게 되면 두 개의 인자에 대한 테스트를 각각 별도로 만들지 않고 하나의 테스트 함수만으로 경계값에 대한 테스트의 커버가 가능해진다.
-
-
-
-이 테스트를 실행해보면 두 인자에 대한 값을 모두 테스트한  결과를 보여주게 된다.
-
-<img width="641" alt="image" src="https://github.com/user-attachments/assets/42c96b54-93c4-45e1-bf64-d9c8d363c538">
-
-
-
-테스트 코드를 작성하는 이유 중 하나로 '코드에 결함을 발견'하고 '테스트하기 쉬운 코드를 작성하다 보면 더 낮은 결합도의 설계를 얻을 수 있다.'는 이유가 있는데 이를 확인해보기 위해 추가적인 테스트를 진행해 볼 것이다.
-
-
-
-방금 설명한 경우를 구현하기 위해 패스워드를 만들어주는 자바 라이브러리를 하나 설치해준다.
+또한 실제로는 고정된 값의 패스워드가 들어오는 것이 아니라 무작위의 값이 들어오는데 이를 대응하기 위해 패스워드를 만들어주는 자바 라이브러리를 하나 설치해볼 것이다.
 
 ```
 implementation 'org.passay:passay:1.6.1'
@@ -592,7 +565,7 @@ public class User {
 
 
 
-그 전에 User의 필드인 password 값을 가져오기 위한 getter 메서드를 만들어준다.
+테스트를 만들기 전에 User의 필드인 password 값을 가져오기 위한 getter 메서드를 만들어준다.
 
 - 이 역시 Command+N을 통해 getter 메뉴를 선택하여 쉽게 만들 수 있다.
 
@@ -627,21 +600,21 @@ UserTest 코드에서는 테스트를 작성하는 방식 중 하나인 given, w
 
 
 
-그 경우에 테스트 코드를 짜기 어려운 이유는 RandomPasswordGenerator에서 패스워드를 몇 글자의 패스워드를 만들어내는 지를 컨트롤할 수 없기 때문이다. 그렇기 때문에 새로운 인터페이스(고정된 패스워드를 만드는)를 만들어 이를 제어하도록 해볼 것이다.
+그 이유는 RandomPasswordGenerator에서 패스워드를 몇 글자의 패스워드를 만들어내는 지 컨트롤할 수 없기 때문이다. 그렇기 때문에 새로운 인터페이스(고정된 패스워드를 만드는 클래스를 만들어 주기 위함)를 만들어 이를 제어하도록 해볼 것이다.
 
 
 
 <img width="668" alt="image" src="https://github.com/user-attachments/assets/7a39da8d-5ab1-4d61-b391-73b761611227">
 
-이를 위해 main 부분에 PasswordGenerator라는 인터페이스를 하나 만들어준다. 그리고 해당 인터페이스를 RandomPasswordGenerator에서 구현받도록 설정해줍니다.
+이를 위해 main 부분에 PasswordGenerator라는 인터페이스를 하나 만들어준다. 그리고 해당 인터페이스를 RandomPasswordGenerator에서 구현받도록 설정해준다.
 
 
 
-그러면 User에서는 RandomPasswordGenerator로부터 새로운 패스워드를 만들어내는 것이 아니라 PasswordGenerator로부터 만들어지게 되는데 PasswordGenerator에서는 generatePassword라는 메서드가 존재하지 않기 때문에 이 메서드를 만들어주기 위해 코드를 수정해 주어야 한다.
+그러면 User에서는 RandomPasswordGenerator로부터 새로운 패스워드를 만들어내는 것이 아니라 PasswordGenerator로부터 만들어지게 되는데 아직 PasswordGenerator에서는 generatePassword라는 메서드가 존재하지 않기 때문에 이 메서드를 만들어주기 위해 코드를 수정해 주어야 한다.
 
 
 
-그렇게 되면 내 구현체는 어떤 것인지 모르겠지만 generatePassword라는 메소드를 실행했을 때 고정된 password를 받고 그 패스워드를 validate 하는 과정을 진행해나가는 것이다.
+그렇게 되면 내 구현체는 아직까진 어떤 것인지 모르겠지만 generatePassword라는 메소드를 실행했을 때 고정된 password를 받고 그 패스워드를 validate 하는 구현체로 만들면 되는 것이다.
 
 
 
@@ -765,7 +738,7 @@ public class User {
 
 
 
-위 명제에 대해 다시 생각해보면
+위 명제에 대해 한번 생각해보면
 
 ```java
 // as-is 
@@ -775,9 +748,9 @@ RandomPasswordGenerator randomPasswordGenerator = new RandomPasswordGenerator();
 String password = passwordGenerator.generatePassword();
 ```
 
-앞서 살펴 본 initPassword 메서드 부분에서는 초기에 as-is 방식을 사용하여 내부에서 생성하는 패스워드였기 때문에 클래스간 강한 결합이 존재한다고 볼 수 있다. 
+앞서 살펴 본 initPassword 메서드 부분에서는 초기에 as-is 방식을 사용하여 내부에서 생성하는 패스워드였기 때문에 클래스간 강한 결합이 존재한다고 볼 수 있었다. 
 
-그래서 해당 클래스는 RandomPasswordGenerator의 영향을 굉장히 많이 받을 수밖에 없었는데, 이러한 강결합을 느슨한 결합으로 만들어주기 위해서 상위에 interface 하나를 두어, 해당 인터페이스를 통해 더 이상 RandomPasswordGenerator에 대한 의존 관계를 가지지 않을 수 있게 외부에서 주입받음으로써 더욱 느슨한 결합을 가진 코드로 재탄생 시킨 것이다.
+그래서 해당 클래스는 RandomPasswordGenerator의 영향을 굉장히 많이 받을 수밖에 없었는데, 이러한 강결합을 느슨한 결합으로 만들어주기 위해서 상위에 interface 하나를 두어, 해당 인터페이스를 통해 더 이상 RandomPasswordGenerator에 대한 의존 관계를 가지지 않을 수 있게 외부에서 주입 받음으로써 더욱 느슨한 결합을 가진 코드로 재탄생 시킨 것이었다.
 
 
 
@@ -845,11 +818,11 @@ Feature: Password Generation
 	Background:
 		Given the user if on the password generation page
 	
-	Scenraio: User generates a valid password
+	Scenario: User generates a valid password
 		When the user enters a valid password and clicks the generate button
 		Then the system should display a message indicating the password is valid
 	
-	Scenrio: User generates an invalid password
+	Scenario: User generates an invalid password
 		When the user enters an invalid password and clicks the generate button
 		Then the system should display a message indicating the password is invalid
 ```
@@ -976,6 +949,80 @@ public class PasswordServiceTest {
 
 
 <img width="575" alt="image" src="https://github.com/user-attachments/assets/0de52d7a-2aad-48a1-ae7c-905bde5ffee9">
+
+
+
+### Cucumber를 활용한 BDD 테스트 코드 만들기
+
+앞서 Gherkin 언어를 통해 feature 파일을 만들어보았으니 이제 이를 활용해볼 것이다.
+
+
+
+먼저 gradle 프로젝트 기준으로 아래와 같은 문장을 build.gradle에 추가하여 cucumber를 프로젝트에 추가해준다.
+
+```
+testImplementation 'io.cucumber:cucumber-java:6.10.4'
+```
+
+
+
+CLI를 통해 cucumber를 사용해보기 위해 아래 코드들도 마찬가지로 추가해준다.
+
+```
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+```
+
+```
+task cucumberCli() {
+    dependsOn assemble, testClasses
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = [
+              '--plugin', 'pretty',
+              '--plugin', 'html:target/cucumber-report.html', 
+              '--glue', 'com.baeldung.cucumber', 
+              'src/test/resources']
+        }
+    }
+}
+```
+
+이 작업들은 src/test/resources 디렉터리 밑에 모든 .feature 파일들을 찾아 실행시켜주기 위한 것들이고 Main클래스의 
+-glue 옵션을 통해 시나리오를 돌리는데 필요한 단계 정의 파일들의 위치를 특정지어준다.
+
+-plugin 옵션은 테스트 레포트의 위치와 형식을 특정지어준다.
+
+
+
+앞서 Gherkin으로 시나리오는 작성했으니 테스트 코드를 아래와 같이 작성해준다.
+
+```
+package org.ktb.chatbotbe;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+        features = "src/test/resources/features",
+        glue = "org.ktb.chatbotbe",
+        plugin = {"pretty", "html:target/cucumber-reports"}
+)
+public class TestRunner {
+}
+
+```
+
+
+
+![image](https://github.com/user-attachments/assets/30661484-4dae-45ad-beb8-6f619fcb3dad)
 
 
 
@@ -1368,6 +1415,49 @@ assertThat(response.getBody()).isEqualTo(WRONG_PASSWORD_LENGTH_EXCEPTION_MESSAGE
 
 
 
+### 여러 인자를 확인할 수 있는 테스트
+
+앞서 경계값에 대한 값들에 대해 테스트를 진행해보려 두 개의 테스트 코드를 작성한 경우가 있었다. 그러나 그 두 개의 테스트 코드는 인자로 들어가는 값만 다르지 그 결과는 예외 처리가 되는지 확인하는 내용이었기에 완전히 같다고 볼 수 있었다.
+
+
+
+그래서 이 두 개의 코드를 분리시키기 보다 여러 인자값에 대해 하나의 테스트가 돌아가게 하는 것이 더 좋을 것이라 생각이 들었다.
+
+
+
+이 부분을 더 효율적으로 테스트해보기 위해서 그 동안 사용했던 @Test 대신에 @ParameterizedTest를 사용해볼 수 있다.
+
+- @ParameterizedTest에 대한 자세한 내용은 http://assertj.github.io 에서 확인할 수 있다.
+
+
+
+```java
+    @DisplayName("경계에 있는 길이 값에 대해 IllegalArgumentException 예외가 발생한다.")
+    @ParameterizedTest
+    @ValueSource(strings = {"1234567", "1234567890123"})
+    void validatePasswordExceptionTest2(String password) {
+        assertThatCode(() -> PasswordValidator.validate(password))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("비밀번호는 최소 8자 이상 12 이하여야 한다.");
+    }
+```
+
+@ParameterizedTest는 여러 개의 data source를 사용하여 테스트하는 것을 의미하고 @ValueSource로 안에 인자들을 어떤 식으로 줄 지 명시한 후 validatePasswordExceptionTest2() 메서드에 인자로 String password와 같이 string 형태의 password가 들어오게 될 것이다.라고 명시를 하면 password 변수에 앞서 @ValueSource에 지정해 둔 비밀번호 값들이 순차적으로 들어와 테스트를 진행하게 된다.
+
+- 이렇게 되면 두 개의 인자에 대한 테스트를 각각 별도로 만들지 않고 하나의 테스트 함수만으로 경계값에 대한 테스트의 커버가 가능해진다.
+
+
+
+이 테스트를 실행해보면 두 인자에 대한 값을 모두 테스트한  결과를 보여주게 된다.
+
+<img width="641" alt="image" src="https://github.com/user-attachments/assets/42c96b54-93c4-45e1-bf64-d9c8d363c538">
+
+
+
+테스트 코드를 작성하는 이유 중 하나로 '코드에 결함을 발견'하고 '테스트하기 쉬운 코드를 작성하다 보면 더 낮은 결합도의 설계를 얻을 수 있다.'는 이유가 있는데 이를 확인해보기 위해 추가적인 테스트를 진행해 볼 것이다.
+
+
+
 ## 16. 지속적인 통합(CI) 설정 및 테스트 자동화
 
 ### CI 도구 선택
@@ -1395,11 +1485,23 @@ assertThat(response.getBody()).isEqualTo(WRONG_PASSWORD_LENGTH_EXCEPTION_MESSAGE
 
 ### 결과 확인
 
+![image](https://github.com/user-attachments/assets/bed2e7cf-8a79-4e6e-a01b-3b7048c35d37)
+
+실제로 프로젝트를 커밋하고 푸시하면 곧바로 브랜치에 머지되는 것이 아니라 등록한 workflow에 따라 빌드와 테스트를 진행하며 아래 사진을 보면 알 수 있듯이 어느 과정에서도 실패를 하게 되면 병합시키지 않지만 모든 과정에 성공하게 되었을 때 머지를 성공적으로 하게 된다.
 
 
 
+![image](https://github.com/user-attachments/assets/d6642959-48b1-4a65-9563-83791dabe72d)
 
 
+
+만약 이를 Pull Request와 합쳐지게 되면 CI에 성공을 해야 풀리퀘스트 및 approval이 가능해지게 되는 식으로 연결이 된다.
+
+
+
+![image](https://github.com/user-attachments/assets/67badf94-a85c-4b68-94b5-2422e5ea631c)
+
+결과적으로 등록한 테스트 코드를 실행시켜 테스트에 성공한 경우 병합이 되는 CI(Continuous Integration)를 성공적으로 적용하였다.
 
 
 
@@ -1409,8 +1511,6 @@ assertThat(response.getBody()).isEqualTo(WRONG_PASSWORD_LENGTH_EXCEPTION_MESSAGE
 - [x] 테스트 시나리오
 - [x] 테스트 커버리지 보고서
 - [x] 적용 사례 보고서
-
-
 
 
 
@@ -1430,8 +1530,6 @@ assertThat(response.getBody()).isEqualTo(WRONG_PASSWORD_LENGTH_EXCEPTION_MESSAGE
 
 - https://testing.googleblog.com/2014/04/the-real-test-driven-development.html
 - https://link.springer.com/article/10.1007/s10664-020-09895-8
-
-
-
-
+- https://martinfowler.com/bliki/TestDrivenDevelopment.html
+- https://cucumber.io/docs/bdd/
 
